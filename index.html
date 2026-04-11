@@ -113,7 +113,7 @@
             <h2 class="section-title reveal">About Me</h2>
             <div class="about-grid reveal">
                 <div class="about-text">
-                    <p>Applied AI Backend Engineer with ~2 years of experience building <strong>RAG pipelines</strong>, <strong>vector search systems</strong>, and <strong>LLM-driven workflows</strong> using Python and FastAPI. Experienced in designing scalable AI services, retrieval-augmented generation (RAG) systems, hybrid search pipelines, and secure production APIs.</p>
+                    <p>Applied AI Backend Engineer with ~2 years of experience building <strong>RAG pipelines</strong>, <strong>vector search systems</strong>, and <strong>LLM-driven workflows</strong> using Python and FastAPI. Focused on designing reliable retrieval systems, improving search relevance with hybrid and reranking approaches, and developing scalable, secure backend APIs.</p>
                     <div class="about-details">
                         <div class="detail-item">
                             <i class="fa-solid fa-location-dot"></i>
@@ -135,14 +135,29 @@
             <h2 class="section-title reveal">Technical Skills</h2>
             <div class="skills-grid reveal">
                 <div class="skill-category">
-                    <h4>GenAI Systems</h4>
+                    <h4>Languages & Backend</h4>
+                    <div class="skill-badges">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Applied AI Systems</h4>
                     <div class="skill-badges">
                         <span>RAG Pipelines</span>
-                        <span>Hybrid Retrieval</span>
-                        <span>Semantic Chunking</span>
-                        <span>Embeddings</span>
-                        <span>Prompt Orchestration</span>
-                        <span>Structured LLM Outputs</span>
+                        <span>Hybrid Retrieval (Dense + BM25)</span>
+                        <span>Cross-Encoder Reranking</span>
+                        <span>Hierarchical Chunking</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>LLM Engineering</h4>
+                    <div class="skill-badges">
+                        <span>Structured Outputs</span>
+                        <span>Prompt Design</span>
+                        <span>Validation Pipelines</span>
+                        <span>Hallucination Handling</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -152,23 +167,16 @@
                         <span>FAISS</span>
                         <span>MongoDB</span>
                         <span>Redis</span>
-                        <span>Embedding APIs (Gemini)</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h4>Languages & Backend</h4>
-                    <div class="skill-badges">
-                        <span>Python</span>
-                        <span>FastAPI</span>
-                        <span>REST APIs</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Infra & Security</h4>
+                    <h4>Infra & Systems</h4>
                     <div class="skill-badges">
                         <span>Docker</span>
                         <span>Linux</span>
-                        <span>Keycloak (JWT, RBAC)</span>
+                        <span>Async Processing</span>
+                        <span>Worker Pipelines</span>
+                        <span>Caching Strategies</span>
                     </div>
                 </div>
             </div>
@@ -182,28 +190,17 @@
             <div class="timeline reveal">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025 – Present</div>
+                    <div class="timeline-date">2024 – Present</div>
                     <div class="timeline-content">
                         <h3>AI Backend Engineer</h3>
                         <h4>Yensi Solutions — Hyderabad</h4>
                         <ul>
-                            <li>Contributed to designing and deploying production RAG pipelines including document ingestion, semantic chunking, embedding generation, hybrid retrieval, and response synthesis.</li>
-                            <li>Implemented hybrid retrieval using Qdrant combining vector similarity search with metadata filtering to improve document retrieval accuracy.</li>
-                            <li>Built structured LLM pipelines using Pydantic schema validation to ensure reliable and predictable AI responses.</li>
-                            <li>Improved API latency by about 40% using Redis caching and query optimization.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024 – 2025</div>
-                    <div class="timeline-content">
-                        <h3>Backend Developer</h3>
-                        <h4>Yensi Solutions — Hyderabad</h4>
-                        <ul>
-                            <li>Developed secure FastAPI REST services with JWT authentication and RBAC using Keycloak.</li>
-                            <li>Optimized MongoDB queries and indexing for improved API performance.</li>
-                            <li>Built bulk ingestion and asynchronous background processing pipelines.</li>
+                            <li>Designed and built end-to-end RAG pipelines covering ingestion, recursive chunking, hybrid retrieval (dense + BM25), reranking, and response generation.</li>
+                            <li>Enhanced retrieval accuracy using cross-encoder reranking and hierarchical parent-child chunking for richer context understanding.</li>
+                            <li>Developed a fully local AI inference setup using SentenceTransformers and BM25, removing external API dependency and enabling cost-efficient processing.</li>
+                            <li>Boosted system performance using Redis caching to reduce repeated computation and improve response latency.</li>
+                            <li>Built scalable async worker-based pipelines to handle heavy ingestion and background processing efficiently.</li>
+                            <li>Implemented structured logging and secure backend APIs with role-based access control for reliable and maintainable systems.</li>
                         </ul>
                     </div>
                 </div>
@@ -216,56 +213,55 @@
         <div class="container">
             <h2 class="section-title reveal">Featured Projects</h2>
             <div class="projects-grid reveal">
-                <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Citex — Citation-grade Context Retrieval System</h3>
-                        <p>Built a context retrieval pipeline and APIs that ingest documents into MongoDB, chunk them, create embeddings, and index them in Qdrant for semantic search. Implemented metadata and provenance so every retrieved chunk is traceable.</p>
+                        <p>Built a multi-stage hybrid retrieval system with dense + sparse search and cross-encoder reranking. Implemented recursive parent-child chunking (1500/500) to preserve semantic structure and improve retrieval quality. Designed metadata-rich indexing (parent_id, file_hash, source tracking) for traceability and citation grounding. Integrated caching layer using Redis to optimize repeated query performance. Developed ingestion pipeline with duplicate detection and consistency guarantees.</p>
                         <div class="tech-stack">
                             <span>FastAPI</span>
-                            <span>MongoDB</span>
                             <span>Qdrant</span>
-                            <span>Neo4j</span>
-                            <span>MinIO</span>
+                            <span>Redis</span>
+                            <span>MongoDB</span>
                             <span>Docker</span>
                         </div>
                     </div>
                 </div>
-                <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>AI Gizmo Planner Copilot</h3>
-                        <p>AI Urban Planning Assistant. Built an AI pipeline to process construction drawings and documents into structured data. Implemented LLM-based extraction for rooms, floors, and equipment schedules.</p>
+                        <h3>AH Ledger — AI-Powered S106 Compliance System</h3>
+                        <p>Built a backend system to automate tracking of S106 obligations, conditions, and compliance workflows. Designed an end-to-end AI pipeline (document ingestion → chunking → LLM extraction → validation → storage). Implemented validation and fallback mechanisms to handle unreliable AI outputs and ensure data quality. Built asynchronous document processing and implemented document comparison with conflict detection.</p>
                         <div class="tech-stack">
                             <span>FastAPI</span>
-                            <span>Gemini API</span>
                             <span>MongoDB</span>
                             <span>Docker</span>
+                            <span>LLM APIs (Claude/OpenRouter)</span>
+                            <span>AsyncIO</span>
                         </div>
                     </div>
                 </div>
-                <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3>AI Pujari — AI-Enabled Digital Platform</h3>
-                        <p>Orchestrated AI-driven audio and avatar generation pipelines integrating LLM-based script processing, ElevenLabs TTS, and external media services with asynchronous background job processing.</p>
+                        <p>Built AI-driven pipelines for audio and avatar generation with automated processing and background job handling. Designed concurrent task execution with job tracking, logging, failure recovery, and secure access control.</p>
                         <div class="tech-stack">
                             <span>FastAPI</span>
                             <span>MongoDB</span>
                             <span>Keycloak</span>
                             <span>Docker</span>
+                            <span>Elevenlabs</span>
+                            <span>Heygen</span>
                         </div>
                     </div>
                 </div>
-                <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Golf Addicts — Tournament & League Platform</h3>
-                        <p>Optimized leaderboard and tournament APIs using MongoDB aggregation, compound indexing, caching, and pagination. Implemented background score computation and atomic database operations.</p>
+                        <p>Optimized leaderboard and tournament APIs for scalable performance using efficient queries, indexing, and caching. Implemented background processing, bulk data ingestion, and secure endpoints with authentication and role-based access control.</p>
                         <div class="tech-stack">
                             <span>FastAPI</span>
                             <span>MongoDB</span>
                             <span>Keycloak</span>
+                            <span>Docker</span>
                         </div>
                     </div>
                 </div>

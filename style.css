@@ -493,7 +493,45 @@ footer {
     .section-title { font-size: 2rem; }
     .hero h1 { font-size: 2.8rem; }
     .hero h3 { font-size: 1.4rem; }
-    
+    .container {
+        padding: 0 1rem;
+    }
+    section {
+        padding: 60px 0;
+    }
+    .about-details {
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .project-info {
+        padding: 1.2rem;
+    }
+    .timeline {
+        padding-left: 1rem;
+    }
+    .timeline-content {
+        padding: 1.2rem;
+    }
+    .contact-wrapper {
+        padding: 0 0.5rem;
+    }
+    .contact-item {
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
     .nav-links {
         position: fixed;
         right: -100%;
@@ -507,30 +545,35 @@ footer {
         transition: 0.5s;
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     }
-    
     .nav-links.active {
         right: 0;
     }
-    
     .hamburger {
         display: block;
         z-index: 1001;
     }
-    
     .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
-
     .hero-btns {
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
-    
     .btn-secondary { margin-left: 0; }
-    
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
+}
+
+@media (max-width: 480px) {
+    .section-title { font-size: 1.3rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero h3 { font-size: 1.1rem; }
+    .hero p { font-size: 0.95rem; }
+    .project-info h3 { font-size: 1.1rem; }
+    .project-info p { font-size: 0.85rem; }
+    .skill-category { padding: 1rem; }
+    .timeline-content { padding: 0.8rem; }
+    .contact-item { font-size: 0.95rem; padding: 0.5rem 0.5rem; }
+    .footer-content { gap: 0.5rem; }
+    .container { padding: 0 0.5rem; }
+}
 }
